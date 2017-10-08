@@ -2,9 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - NASAv1.Web</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -15,35 +14,71 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
-    @Html.Raw(JavaScriptSnippet.FullScript)
+
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">NASAv1.Web</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+    <div id="header" class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+            <span class="pull-left glyphiconIconContainer glyphiconIconContainerHamburger">
+                <span class="glyphicon glyphicon-th-list glyphiconIcon glyphiconIconHamburger"></span>
+            </span>
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                <img src="~/Images/todolist-icon.png" />
+            </a>
+        </div>
+        <div>
+            <span class="glyphiconIconContainer glyphiconIconContainerUserProfile pull-right">
+                <span class="glyphicon glyphicon-user glyphiconIcon glyphiconIconUserProfile"></span>
+            </span>
+            <ul id="ulTopNavDropDownList">
+                <li class="topNavDropDownListItem">
+                    @User.Identity.GetUserName()
+                </li>
+                <li class="topNavDropDownListItem">
+                    @Html.ActionLink("Log Off", "LogOff", "Account")
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div id="sidebar-wrapper" class="col-md-1">
+            <div id="sidebar">
+                <ul class="nav list-group">
+                    <li>
+                        <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 1</a>
+                    </li>
+                    <li>
+                        <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 2</a>
+                    </li>
+                    <li>
+                        <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 9</a>
+                    </li>
+                    <li>
+                        <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 10</a>
+                    </li>
+                    <li>
+                        <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Sidebar Item 11</a>
+                    </li>
                 </ul>
             </div>
         </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2017 - NASAv1.Web</p>
-        </footer>
+        <div id="main-wrapper" class="col-md-11 pull-right">
+            <div id="main">
+                <div class="page-header">
+                    <h3>Place Holder For Page Header</h3>
+                </div>
+                <div>
+
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 footer">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>
+        </div>
     </div>
 
     <environment names="Development">
