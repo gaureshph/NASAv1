@@ -14,6 +14,7 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+    <link rel="stylesheet" href="~/shared/css/NASA.css" asp-append-version="true" />
 
 </head>
 <body>
@@ -22,8 +23,8 @@
             <span class="pull-left glyphiconIconContainer glyphiconIconContainerHamburger">
                 <span class="glyphicon glyphicon-th-list glyphiconIcon glyphiconIconHamburger"></span>
             </span>
-            <a class="navbar-brand" href="@Url.Action("Index", "Home")">
-                <img src="~/Images/todolist-icon.png" />
+            <a class="navbar-brand" href="@Url.Action("Index", "Rocket")">
+                <img src="~/shared/images/nasa-logo.jpg" />
             </a>
         </div>
         @*<div>
@@ -101,7 +102,7 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-
+    <script src="~/shared/js/NASA.js" asp-append-version="true"></script>        
     @RenderSection("Scripts", required: false)
 </body>
 </html>
