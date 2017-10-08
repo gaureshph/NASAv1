@@ -3,7 +3,7 @@ using System;
 
 namespace NASAv1.Domain.Entities
 {
-    class Rocket: IEntity
+    public class Rocket: IEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }

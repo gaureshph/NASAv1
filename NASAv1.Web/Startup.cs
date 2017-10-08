@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using NASAv1.Web.Middleware;
+using NASAv1.Infrastructure.DbContexts;
+using Microsoft.EntityFrameworkCore;
 
 namespace NASAv1.Web
 {
@@ -28,6 +25,9 @@ namespace NASAv1.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddDbContext<NASADbContext>(options => 
+                                        options.UseSqlServer(Configuration.GetConnectionString("NASADbContext"))
+                                        );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
