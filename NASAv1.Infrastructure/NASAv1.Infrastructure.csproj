@@ -158,6 +158,26 @@
     <Compile Include="Migrations\20171008234154_InitialCreate.designer.cs">
       <DependentUpon>20171008234154_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20171008234709_AddedForeignKey.cs" />
+    <Compile Include="Migrations\20171008234709_AddedForeignKey.designer.cs">
+      <DependentUpon>20171008234709_AddedForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20171008234810_AddedForeignKey2.cs" />
+    <Compile Include="Migrations\20171008234810_AddedForeignKey2.designer.cs">
+      <DependentUpon>20171008234810_AddedForeignKey2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20171008235216_AddedForeignKey3.cs" />
+    <Compile Include="Migrations\20171008235216_AddedForeignKey3.designer.cs">
+      <DependentUpon>20171008235216_AddedForeignKey3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20171008235325_AddedForeignKey4.cs" />
+    <Compile Include="Migrations\20171008235325_AddedForeignKey4.designer.cs">
+      <DependentUpon>20171008235325_AddedForeignKey4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20171008235914_AddedForeignKey5.cs" />
+    <Compile Include="Migrations\20171008235914_AddedForeignKey5.designer.cs">
+      <DependentUpon>20171008235914_AddedForeignKey5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\NASADbContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

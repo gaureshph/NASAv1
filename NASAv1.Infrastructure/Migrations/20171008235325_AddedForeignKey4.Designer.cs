@@ -11,9 +11,10 @@ using System;
 namespace NASAv1.Infrastructure.Migrations
 {
     [DbContext(typeof(NASADbContext))]
-    partial class NASADbContextModelSnapshot : ModelSnapshot
+    [Migration("20171008235325_AddedForeignKey4")]
+    partial class AddedForeignKey4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,17 +48,7 @@ namespace NASAv1.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RocketID");
-
                     b.ToTable("Satellite");
-                });
-
-            modelBuilder.Entity("NASAv1.Domain.Entities.Satellite", b =>
-                {
-                    b.HasOne("NASAv1.Domain.Entities.Rocket", "Rocket")
-                        .WithMany("Satellites")
-                        .HasForeignKey("RocketID")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

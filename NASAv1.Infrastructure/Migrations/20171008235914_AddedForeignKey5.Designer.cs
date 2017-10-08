@@ -11,9 +11,10 @@ using System;
 namespace NASAv1.Infrastructure.Migrations
 {
     [DbContext(typeof(NASADbContext))]
-    partial class NASADbContextModelSnapshot : ModelSnapshot
+    [Migration("20171008235914_AddedForeignKey5")]
+    partial class AddedForeignKey5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
