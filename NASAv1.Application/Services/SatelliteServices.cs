@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
 using NASAv1.Domain.Entities;
 using NASAv1.Domain.Interfaces;
 
@@ -15,27 +12,28 @@ namespace NASAv1.Application.Services
         {
             _repository = repository;
         }
-        public void Add(Satellite entity)
+
+        public int Create(Satellite satellite)
         {
             throw new NotImplementedException();
         }
 
-        public Satellite Find(int id)
+        public int Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IQueryable<Satellite> Get(Expression<Func<IList<Satellite>, bool>> predicate)
+        public int GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public IQueryable<Satellite> GetAll()
+        public int GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Remove(Satellite entity)
+        public bool Update(Satellite satellite)
         {
             throw new NotImplementedException();
         }
