@@ -1,6 +1,6 @@
 ﻿namespace NASAv1.Domain.Interfaces
 {
-    interface IEntity
+    public interface IEntity
     {
         int Id { get; set; }
     }

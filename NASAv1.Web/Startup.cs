@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using NASAv1.Web.Middleware;
 using NASAv1.Infrastructure.DbContexts;
 using Microsoft.EntityFrameworkCore;
+using NASAv1.Application.Services;
 
 namespace NASAv1.Web
 {
@@ -24,6 +25,8 @@ namespace NASAv1.Web
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IRocketServices, RocketServices>();
+            services.AddTransient<ISatelliteServices, SatelliteServices>();
             services.AddMvc();
             services.AddDbContext<NASADbContext>(options => 
                                         options.UseSqlServer(Configuration.GetConnectionString("NASADbContext"))
